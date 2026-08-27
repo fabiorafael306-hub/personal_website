@@ -5,22 +5,177 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Personal-Portfolio</title>
     <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@600;700;800;900&family=Space+Mono:wght@400;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="style.css">
+    <script type="module" src="https://unpkg.com/@google/model-viewer/dist/model-viewer.min.js"></script>
 </head>
 <body>
-   <header class="header">
-    <nav class="barra">
-        <a href="index.html">Home</a>
-        <a href="sobre.html">Sobre</a>
-        <a href="tech-stack.html">Tech Stack</a>
-        <a href="projetos.html">Projetos</a>
-        <a href="contato.html">Contato</a>
-    </nav>
-    <div class="header-text">
-        <h1>Oi, eu sou Fábio</h1>
-        <p>Desenvolvedor fullstack</p>
+
+    <div class="starfield">
+        <div class="stars-layer stars-small"></div>
+        <div class="stars-layer stars-medium"></div>
+        <div class="stars-layer stars-large"></div>
     </div>
-</header>    
+
+    <header class="header">
+        <nav class="barra">
+            <button class="menu-toggle" aria-label="Abrir menu" aria-expanded="false">
+                <span></span>
+                <span></span>
+                <span></span>
+            </button>
+            <div class="barra-links">
+                <a href="#home">Home</a>
+                <a href="#sobre">Sobre</a>
+                <a href="#techstack">Tech Stack</a>
+                <a href="#projetos">Projetos</a>
+                <a href="#contato">Contato</a>
+            </div>
+        </nav>
+
+        <div class="header-content" id="home">
+            <div class="header-text">
+                <h1>Oi, eu sou o <span>Fábio</span></h1>
+                <p>Um desenvolvedor fullstack entusiasta da <span>criatividade</span>.</p>
+            </div>
+
+            <div class="header-3d">
+                <model-viewer
+                    src="models/low_poly_80s_computer_v3/scene.gltf"
+                    alt="Modelo 3D de um computador retrô estilo anos 80"
+                    camera-controls
+                    auto-rotate
+                    auto-rotate-delay="0"
+                    rotation-per-second="18deg"
+                    interaction-prompt="none"
+                    shadow-intensity="0"
+                    disable-zoom
+                    exposure="1.1"
+                    camera-orbit="20deg 75deg 80%"
+                    field-of-view="25deg"
+                    loading="eager">
+                </model-viewer>
+            </div>
+        </div>
+    </header>
+
+    <section class="sobre reveal" id="sobre">
+        <h2 class="section-title">Desenvolvedor Fullstack</h2>
+        <div class="sobre-img">
+            <img src="images/avatar.png" alt="Foto ou avatar de Fábio">
+        </div>
+        <div class="sobre-texto">
+            <p>Estudante de Ciência da Computação na Unilasalle, atualmente cursando a Residência Fullstack 5.0 do Instituto El Dorado.</p>
+            <p>
+                Ao longo da graduação venho me aprofundando em banco de dados — modelagem, normalização
+                e SQL —, desenvolvimento de software em Python, lógica de programação e estruturas de
+                dados e algoritmos. Também tenho contato constante com orientação a objetos e controle
+                de versão com Git, ferramentas presentes no dia a dia dos projetos acadêmicos.
+            </p>
+            <p>
+                Na residência, desenvolvo projetos práticos semanalmente, o que tem me permitido
+                aprofundar conhecimentos prévios e incorporar novas tecnologias ao meu repertório,
+                como Java, PostgreSQL, HTML, CSS e JavaScript.
+            </p>
+            <p>
+                Também atuei como Jovem Aprendiz na Pulse Client Experts, onde tive contato com
+                auditoria de qualidade de atendimento, correção de modelos de IA e análise de jornada
+                do cliente.
+            </p>
+        </div>
+    </section>
+
+    <section class="techstack reveal" id="techstack">
+         <h2 class="section-title">Tech Stack</h2>
+
+        <div class="papeis">
+            <div class="papel papel-1 reveal">
+                <h3>Front-end</h3>
+                <ul>
+                    <li>HTML / CSS</li>
+                    <li>JavaScript</li>
+                    <li>React</li>
+                </ul>
+            </div>
+
+            <div class="papel papel-2 reveal">
+                <h3>Back-end</h3>
+                <ul>
+                    <li>Node.js</li>
+                    <li>Java</li>
+                    <li>MySQL / MongoDB</li>
+                </ul>
+            </div>
+
+            <div class="papel papel-3 reveal">
+                <h3>DevOps</h3>
+                <ul>
+                    <li>Docker</li>
+                    <li>Git</li>
+                    <li>CI/CD</li>
+                </ul>
+            </div>
+        </div>
+    </section>
+
+    <section class="projetos reveal" id="projetos">
+        <h2 class="section-title">Projetos</h2>
+
+        <div class="projeto-card reveal">
+            <div class="projeto-info">
+                <h3>Identificador de Phishing</h3>
+                <p>
+                    Sistema desenvolvido em Java que analisa e-mails em busca de sinais de
+                    golpe (phishing), atribuindo uma pontuação de risco com base em
+                    palavras-chave suspeitas, pedidos de dados sensíveis, links suspeitos,
+                    senso de urgência e remetentes não confiáveis. Ao final da análise, o
+                    sistema classifica o e-mail em três níveis — baixo, médio ou alto risco
+                    — e lista os motivos que levaram àquela pontuação, facilitando o
+                    entendimento de por que uma mensagem foi sinalizada como golpe.
+                </p>
+
+                <div class="projeto-tags">
+                    <span>Java</span>
+                    <span>IntelliJ IDEA</span>
+                </div>
+
+                <div class="projeto-links">
+                    <a href="#" target="_blank">GitHub</a>
+                </div>
+            </div>
+
+            <div class="projeto-imgs">
+                <img src="images/phishing-1.png" alt="Tela do projeto no IntelliJ" class="img-1">
+                <img src="images/phishing-2.png" alt="Saída do console" class="img-2">
+                <img src="images/phishing-3.png" alt="Estrutura de classes" class="img-3">
+            </div>
+        </div>
+    </section>
+
+    <section class="contato reveal" id="contato">
+        <h2 class="section-title">Contato</h2>
+
+        <div class="contato-wrapper">
+            <form class="contato-form" id="contatoForm" novalidate>
+                <input type="text" name="nome" id="campoNome" placeholder="nome" required>
+                <span class="campo-erro" id="erroNome"></span>
+
+                <input type="email" name="email" id="campoEmail" placeholder="email" required>
+                <span class="campo-erro" id="erroEmail"></span>
+
+                <textarea name="mensagem" id="campoMensagem" placeholder="mensagem" required></textarea>
+                <span class="campo-erro" id="erroMensagem"></span>
+
+                <button type="submit">enviar</button>
+                <p class="form-status" id="formStatus" role="status" aria-live="polite"></p>
+            </form>
+
+            <div class="contato-img">
+                <img src="images/contato.png" alt="Ilustração de contato">
+            </div>
+        </div>
+    </section>
+
+    <script src="script.js"></script>
 </body>
 </html>
