@@ -6,7 +6,6 @@ document.addEventListener('DOMContentLoaded', () => {
     initProjectImageInteraction();
 });
 
-/* ===== 1. Menu hambúrguer (mobile) ===== */
 function initMenuToggle() {
     const toggle = document.querySelector('.menu-toggle');
     const links = document.querySelector('.barra-links');
@@ -19,7 +18,6 @@ function initMenuToggle() {
         toggle.setAttribute('aria-expanded', String(abrindo));
     });
 
-    // fecha o menu ao clicar em qualquer link (comportamento esperado no mobile)
     links.querySelectorAll('a').forEach((link) => {
         link.addEventListener('click', () => {
             links.classList.remove('aberto');
@@ -29,7 +27,6 @@ function initMenuToggle() {
     });
 }
 
-/* ===== 2. Destaque do link ativo no menu, conforme o scroll ===== */
 function initActiveNav() {
     const links = document.querySelectorAll('.barra-links a');
     if (!links.length) return;
@@ -62,7 +59,6 @@ function initActiveNav() {
     alvos.forEach((alvo) => observer.observe(alvo));
 }
 
-/* ===== 3. Animações de entrada ao rolar a página ===== */
 function initScrollReveal() {
     const itens = document.querySelectorAll('.reveal');
     if (!itens.length) return;
@@ -87,7 +83,6 @@ function initScrollReveal() {
     itens.forEach((el) => observer.observe(el));
 }
 
-/* ===== 4. Formulário de contato: validação + envio ===== */
 function initContactForm() {
     const form = document.getElementById('contatoForm');
     if (!form) return;
@@ -155,7 +150,6 @@ function initContactForm() {
         botao.textContent = 'enviando...';
 
         try {
-            // Troque a URL abaixo pelo seu endpoint (Formspree, EmailJS, backend próprio, etc).
             const resposta = await fetch('https://formspree.io/f/mwlkeqzn', {
                 method: 'POST',
                 headers: {
@@ -181,7 +175,6 @@ function initContactForm() {
     });
 }
 
-/* ===== 5. Interação com as imagens do card de projeto ===== */
 function initProjectImageInteraction() {
     const imagens = document.querySelectorAll('.projeto-imgs img');
     if (!imagens.length) return;
